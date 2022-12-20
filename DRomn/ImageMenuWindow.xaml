@@ -1,0 +1,170 @@
+﻿<Window x:Class="DRomn.ImageMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DRomn"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1366" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid HorizontalAlignment="Left" Width="1366">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="22"/>
+            <RowDefinition Height="124"/>
+            <RowDefinition Height="305"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="69*"/>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="247*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="Fondo"  HorizontalAlignment="Left" 
+                   Height="752" VerticalAlignment="Top"  Width="1366" Opacity="0.9" Grid.RowSpan="8" Grid.ColumnSpan="10">
+            <Rectangle.Fill>
+                <ImageBrush  
+                   ImageSource="/src/background.png"         Stretch="UniformToFill" Opacity="0.9" TileMode="None"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="FondoLogin" Grid.Column="1" Margin="6,50,2,5" StrokeThickness="5" Opacity="1"                   RadiusX="50" RadiusY="50" Grid.RowSpan="7" Grid.ColumnSpan="8" Stroke="White">
+            <Rectangle.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFC5C5C5" Offset="0.995"/>
+                    <GradientStop Color="White" Offset="0.237"/>
+                </RadialGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Grid.Column="4" Content="Selección de Imagen" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Width="595" Height="72" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Margin="10,0,0,0" FontFamily="Berlin Sans FB" FontSize="60" Grid.ColumnSpan="5"/>
+        <Image Source="/src/dron.png" Grid.Column="2" HorizontalAlignment="Left" Height="103" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="168" Stretch="UniformToFill" Grid.ColumnSpan="3"/>
+        <Button x:Name="btn_Modelos3D" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="2" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="5,5,93,132" Grid.ColumnSpan="3" Click="btn_Modelos3D_Click" >
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="122" Height="89" Source="/src/3D.png"/>
+                <TextBlock Text="Modelos 3D"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="242" Height="29" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Ortomosaicos" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="5" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="10,5,17,132" Click="btn_Ortomosaicos_Click" >
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="122" Height="92" Source="/src/orto.png"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Mapas"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="150" Height="29" TextAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Text="Ortomosaicos"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="162" Height="37" TextAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Elevacion" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="6" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="90,5,10,132"  Grid.ColumnSpan="2" Click="btn_Elevacion_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="122" Height="92" Source="/src/elevacion.png"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Modelos"
+                        FontSize="28" FontFamily="Berlin Sans FB" Width="150" Height="29" TextAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Text="de Elevación"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="162" Height="37" TextAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Paisajes" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="2" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="7,205,91,10" Grid.ColumnSpan="3" Grid.RowSpan="2" Click="btn_Paisajes_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="122" Height="89" Source="/src/rio.png"/>
+                <TextBlock Text="Paisajes"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="242" Height="29" HorizontalAlignment="Center" TextAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Cultivos" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="5" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="12,205,17,10"  Grid.RowSpan="2" Click="btn_Cultivos_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="104" Height="88" Source="/src/planta.png"/>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Salud"
+                        FontSize="28" FontFamily="Berlin Sans FB" Width="150" Height="29" TextAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Text="de Cultivos"
+                    FontSize="28" FontFamily="Berlin Sans FB" Width="162" Height="37" TextAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Otros" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="6" BorderBrush="#FF151E87" BorderThickness="4" Foreground="White" Margin="90,205,10,10"  Grid.ColumnSpan="2" Grid.RowSpan="2" Click="btn_Otros_Click">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF151E87" Offset="1"/>
+                    <GradientStop Color="#FF5F9BF7" Offset="0.311"/>
+                </RadialGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image  OpacityMask="White" Width="122" Height="92" Source="/src/mas.png"/>
+
+                <TextBlock Text="Otros"
+                        FontSize="28" FontFamily="Berlin Sans FB" Width="150" Height="29" TextAlignment="Center"/>
+
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnAtras" 
+            Grid.Row="5" 
+            FontSize="16"  Grid.Column="5" BorderBrush="Black" BorderThickness="4" Foreground="White" Margin="23,6,30,16" Click="btnAtras_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF848484" Offset="0.006"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image  OpacityMask="White" Width="38" Height="29" Source="/src/return.png"/>
+                <TextBlock Text="Volver"
+                    FontSize="30"
+                    VerticalAlignment="Center" FontFamily="Berlin Sans FB" Width="89"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
